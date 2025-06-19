@@ -18,9 +18,7 @@ const Projects = () => {
       role: 'Full Stack Developer',
       contributions: 'Complete design and development, responsive implementation, performance optimization',
       features: ['Responsive Design', 'Smooth Animations', 'SEO Optimized', 'Accessibility Compliant'],
-      metrics: '100% Lighthouse Performance Score',
-      challenges: 'Implementing smooth scroll animations while maintaining performance across all devices',
-      outcomes: 'Successfully deployed with perfect accessibility scores and mobile-first responsive design'
+      metrics: '100% Lighthouse Performance Score'
     },
     {
       title: 'Aribin - E-Commerce UI Clone',
@@ -35,9 +33,7 @@ const Projects = () => {
       role: 'Frontend Developer',
       contributions: 'UI/UX implementation, responsive design, accessibility features',
       features: ['Product Catalog', 'Shopping Cart UI', 'User Authentication UI', 'Mobile Responsive'],
-      metrics: 'Cross-browser compatibility achieved across 5+ browsers',
-      challenges: 'Creating pixel-perfect responsive design that works seamlessly across all screen sizes',
-      outcomes: 'Delivered a fully functional e-commerce UI with modern design patterns and accessibility compliance'
+      metrics: 'Cross-browser compatibility achieved'
     },
     {
       title: 'Virtual Classroom (Zoom Clone - Enhanced)',
@@ -52,9 +48,7 @@ const Projects = () => {
       role: 'Full Stack Developer',
       contributions: 'Real-time features implementation, UI enhancement, user experience optimization',
       features: ['Video Conferencing UI', 'Chat System', 'Screen Sharing', 'User Management'],
-      metrics: 'Supports 50+ concurrent users with optimized performance',
-      challenges: 'Implementing real-time communication features while maintaining smooth user experience',
-      outcomes: 'Created a scalable virtual classroom solution with enhanced features for educational use'
+      metrics: 'Supports 50+ concurrent users'
     }
   ];
 
@@ -62,11 +56,7 @@ const Projects = () => {
 
   const filteredProjects = selectedFilter === 'All' 
     ? projects 
-    : projects.filter(project => 
-        project.technologies.some(tech => 
-          tech.toLowerCase().includes(selectedFilter.toLowerCase())
-        )
-      );
+    : projects.filter(project => project.technologies.includes(selectedFilter));
 
   const getColorClasses = (color: string) => {
     const colors = {
@@ -157,18 +147,6 @@ const Projects = () => {
                 {/* Project Description */}
                 <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">{project.description}</p>
 
-                {/* Challenges & Outcomes */}
-                <div className="mb-6 space-y-4">
-                  <div className="p-4 bg-white dark:bg-gray-700 rounded-lg border dark:border-gray-600">
-                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-2">Key Challenge:</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{project.challenges}</p>
-                  </div>
-                  <div className="p-4 bg-white dark:bg-gray-700 rounded-lg border dark:border-gray-600">
-                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-2">Outcome:</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{project.outcomes}</p>
-                  </div>
-                </div>
-
                 {/* Key Features */}
                 <div className="mb-6">
                   <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-3">Key Features:</h4>
@@ -200,8 +178,8 @@ const Projects = () => {
                 </div>
 
                 {/* Metrics */}
-                <div className="mb-6 p-3 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg border border-green-200 dark:border-green-700">
-                  <p className="text-sm text-green-800 dark:text-green-200">
+                <div className="mb-6 p-3 bg-white dark:bg-gray-700 rounded-lg border dark:border-gray-600">
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
                     <span className="font-semibold">Achievement:</span> {project.metrics}
                   </p>
                 </div>
@@ -232,49 +210,33 @@ const Projects = () => {
           })}
         </div>
 
-        {/* No Results Message */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12 fade-in">
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              No projects found for "{selectedFilter}". Try selecting a different filter.
-            </p>
-          </div>
-        )}
-
         {/* GitHub Stats Section */}
         <div className="mt-20 fade-in">
           <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-2xl p-10 shadow-2xl">
             <div className="text-center mb-10">
               <h3 className="text-3xl font-bold mb-4">GitHub Activity</h3>
-              <p className="text-gray-300 text-lg">My coding journey in numbers - Live GitHub Statistics</p>
+              <p className="text-gray-300 text-lg">My coding journey in numbers</p>
             </div>
 
             {/* Live GitHub Stats */}
             <div className="flex flex-col items-center space-y-8">
               <img 
-                src="https://github-readme-stats.vercel.app/api?username=GIRIDHAR-GEDELA&show_icons=true&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&icon_color=f7df1e&text_color=ffffff&cache_seconds=1800"
+                src="https://github-readme-stats.vercel.app/api?username=GIRIDHAR-GEDELA&show_icons=true&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&icon_color=f7df1e&text_color=ffffff"
                 alt="Giridhar's GitHub Stats"
                 className="rounded-lg shadow-lg max-w-full h-auto"
                 loading="lazy"
               />
               
               <img 
-                src="https://github-readme-streak-stats.herokuapp.com/?user=GIRIDHAR-GEDELA&theme=radical&hide_border=true&background=1a1b27&stroke=f7df1e&ring=f7df1e&fire=f7df1e&currStreakLabel=ffffff&cache_seconds=1800"
+                src="https://github-readme-streak-stats.herokuapp.com/?user=GIRIDHAR-GEDELA&theme=radical&hide_border=true&background=1a1b27&stroke=f7df1e&ring=f7df1e&fire=f7df1e&currStreakLabel=ffffff"
                 alt="Giridhar's GitHub Streak"
                 className="rounded-lg shadow-lg max-w-full h-auto"
                 loading="lazy"
               />
               
               <img 
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=GIRIDHAR-GEDELA&layout=compact&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&text_color=ffffff&cache_seconds=1800"
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=GIRIDHAR-GEDELA&layout=compact&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&text_color=ffffff"
                 alt="Giridhar's Top Languages"
-                className="rounded-lg shadow-lg max-w-full h-auto"
-                loading="lazy"
-              />
-
-              <img 
-                src="https://github-readme-activity-graph.vercel.app/graph?username=GIRIDHAR-GEDELA&theme=react-dark&bg_color=1a1b27&hide_border=true&point=f7df1e&line=f7df1e&color=ffffff"
-                alt="Giridhar's GitHub Activity Graph"
                 className="rounded-lg shadow-lg max-w-full h-auto"
                 loading="lazy"
               />
@@ -282,26 +244,32 @@ const Projects = () => {
 
             <div className="mt-10 text-center">
               <p className="text-gray-300 mb-6 text-lg">Continuously learning and building amazing projects!</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://github.com/GIRIDHAR-GEDELA"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-white text-gray-900 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  <Github className="w-5 h-5 mr-2" />
-                  View GitHub Profile
-                </a>
-                <a
-                  href="https://github.com/GIRIDHAR-GEDELA?tab=repositories"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
-                >
-                  <Code className="w-5 h-5 mr-2" />
-                  Browse Repositories
-                </a>
-              </div>
+              <a
+                href="https://github.com/GIRIDHAR-GEDELA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-white text-gray-900 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                <Github className="w-5 h-5 mr-2" />
+                View GitHub Profile
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Certifications & Achievements */}
+        <div className="mt-20 fade-in">
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Certifications & Achievements</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border-2 border-blue-200 dark:border-blue-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Industrial Training Certificate</h4>
+              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">BSNL - IT & Networking</p>
+              <p className="text-gray-700 dark:text-gray-300">Comprehensive training in telecommunications and network infrastructure</p>
+            </div>
+            <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 p-8 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Academic Excellence</h4>
+              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">Consistent Performance</p>
+              <p className="text-gray-700 dark:text-gray-300">Maintaining strong academic performance throughout B.Tech program</p>
             </div>
           </div>
         </div>

@@ -8,10 +8,10 @@ const Skills = () => {
       icon: <Code className="w-6 h-6" />,
       color: 'blue',
       skills: [
-        { name: 'HTML5', level: 90, proficiency: 'Expert' },
-        { name: 'CSS3', level: 85, proficiency: 'Expert' },
-        { name: 'JavaScript', level: 80, proficiency: 'Advanced' },
-        { name: 'React', level: 75, proficiency: 'Advanced' }
+        { name: 'HTML5', level: 90 },
+        { name: 'CSS3', level: 85 },
+        { name: 'JavaScript', level: 80 },
+        { name: 'React', level: 75 }
       ]
     },
     {
@@ -19,10 +19,10 @@ const Skills = () => {
       icon: <Server className="w-6 h-6" />,
       color: 'yellow',
       skills: [
-        { name: 'Java', level: 85, proficiency: 'Expert' },
-        { name: 'Node.js', level: 70, proficiency: 'Intermediate' },
-        { name: 'API Development', level: 75, proficiency: 'Advanced' },
-        { name: 'Python', level: 65, proficiency: 'Intermediate' }
+        { name: 'Java', level: 85 },
+        { name: 'Node.js', level: 70 },
+        { name: 'API Development', level: 75 },
+        { name: 'Python', level: 65 }
       ]
     },
     {
@@ -30,10 +30,10 @@ const Skills = () => {
       icon: <Database className="w-6 h-6" />,
       color: 'green',
       skills: [
-        { name: 'MySQL', level: 80, proficiency: 'Advanced' },
-        { name: 'MongoDB', level: 70, proficiency: 'Intermediate' },
-        { name: 'Cloud Basics', level: 60, proficiency: 'Intermediate' },
-        { name: 'Database Design', level: 75, proficiency: 'Advanced' }
+        { name: 'MySQL', level: 80 },
+        { name: 'MongoDB', level: 70 },
+        { name: 'Cloud Basics', level: 60 },
+        { name: 'Database Design', level: 75 }
       ]
     },
     {
@@ -41,10 +41,10 @@ const Skills = () => {
       icon: <Terminal className="w-6 h-6" />,
       color: 'purple',
       skills: [
-        { name: 'Git & GitHub', level: 85, proficiency: 'Expert' },
-        { name: 'Command Line', level: 80, proficiency: 'Advanced' },
-        { name: 'Docker (Learning)', level: 50, proficiency: 'Beginner' },
-        { name: 'CI/CD Basics', level: 45, proficiency: 'Beginner' }
+        { name: 'Git & GitHub', level: 85 },
+        { name: 'Command Line', level: 80 },
+        { name: 'Docker (Learning)', level: 50 },
+        { name: 'CI/CD Basics', level: 45 }
       ]
     },
     {
@@ -52,10 +52,10 @@ const Skills = () => {
       icon: <Globe className="w-6 h-6" />,
       color: 'indigo',
       skills: [
-        { name: 'Responsive Design', level: 90, proficiency: 'Expert' },
-        { name: 'Web Accessibility', level: 85, proficiency: 'Expert' },
-        { name: 'REST APIs', level: 80, proficiency: 'Advanced' },
-        { name: 'Progressive Web Apps', level: 70, proficiency: 'Intermediate' }
+        { name: 'Responsive Design', level: 90 },
+        { name: 'Web Accessibility', level: 85 },
+        { name: 'REST APIs', level: 80 },
+        { name: 'Progressive Web Apps', level: 70 }
       ]
     },
     {
@@ -63,10 +63,10 @@ const Skills = () => {
       icon: <Palette className="w-6 h-6" />,
       color: 'pink',
       skills: [
-        { name: 'UI/UX Principles', level: 75, proficiency: 'Advanced' },
-        { name: 'Figma', level: 70, proficiency: 'Intermediate' },
-        { name: 'Canva', level: 80, proficiency: 'Advanced' },
-        { name: 'Wireframing', level: 70, proficiency: 'Intermediate' }
+        { name: 'UI/UX Principles', level: 75 },
+        { name: 'Figma', level: 70 },
+        { name: 'Canva', level: 80 },
+        { name: 'Wireframing', level: 70 }
       ]
     }
   ];
@@ -113,21 +113,6 @@ const Skills = () => {
     return colors[color as keyof typeof colors];
   };
 
-  const getProficiencyColor = (proficiency: string) => {
-    switch (proficiency) {
-      case 'Expert':
-        return 'text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30';
-      case 'Advanced':
-        return 'text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30';
-      case 'Intermediate':
-        return 'text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30';
-      case 'Beginner':
-        return 'text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700';
-      default:
-        return 'text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-700';
-    }
-  };
-
   return (
     <section className="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 relative">
       {/* Section Divider */}
@@ -161,13 +146,8 @@ const Skills = () => {
                 <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-800 dark:text-gray-200 font-semibold">{skill.name}</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getProficiencyColor(skill.proficiency)}`}>
-                          {skill.proficiency}
-                        </span>
-                      </div>
                       <div className="flex justify-between items-center mb-3">
+                        <span className="text-gray-800 dark:text-gray-200 font-semibold">{skill.name}</span>
                         <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">{skill.level}%</span>
                       </div>
                       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
@@ -191,9 +171,11 @@ const Skills = () => {
             {[
               'Problem Solving',
               'Team Collaboration',
+              'Agile Methodology',
               'Technical Documentation',
               'Code Review',
               'Testing & Debugging',
+              'Performance Optimization',
               'Cross-browser Compatibility',
               'Version Control',
               'Project Management'
@@ -205,39 +187,6 @@ const Skills = () => {
                 {skill}
               </span>
             ))}
-          </div>
-        </div>
-
-        {/* Certifications & Learning Section */}
-        <div className="mt-20 fade-in">
-          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Certifications & Learning</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border-2 border-blue-200 dark:border-blue-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Industrial Training Certificate</h4>
-              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">BSNL - IT & Networking</p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">Comprehensive training in telecommunications and network infrastructure</p>
-              <span className="px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-                Completed 2024
-              </span>
-            </div>
-            
-            <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 p-8 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Web Development Internship</h4>
-              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">SkillCraft Technology</p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">Hands-on experience in accessible web application development</p>
-              <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200 rounded-full text-sm font-medium">
-                June - July 2025
-              </span>
-            </div>
-            
-            <div className="bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-2xl border-2 border-green-200 dark:border-green-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Continuous Learning</h4>
-              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">Self-Directed Study</p>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">Actively learning React, TypeScript, and modern web development practices</p>
-              <span className="px-3 py-1 bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">
-                Ongoing
-              </span>
-            </div>
           </div>
         </div>
       </div>

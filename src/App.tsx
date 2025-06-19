@@ -29,14 +29,6 @@ function App() {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach((el) => observer.observe(el));
 
-    // Image loading optimization
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach((img) => {
-      img.addEventListener('load', () => {
-        img.classList.add('loaded');
-      });
-    });
-
     return () => observer.disconnect();
   }, []);
 

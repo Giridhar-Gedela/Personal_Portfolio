@@ -18,12 +18,12 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-yellow-400">Giridhar Gedela</h3>
             <p className="text-gray-300 leading-relaxed text-lg">
-              Building scalable solutions with Java and Web technologies. 
+              Building scalable solutions with the MERN stack and modern web technologies. 
               Always eager to learn, collaborate, and create meaningful impact through code.
             </p>
             <div className="flex items-center text-gray-400">
               <Code className="w-5 h-5 mr-3" />
-              <span className="font-medium">Web Developer</span>
+              <span className="font-medium">MERN Stack Developer</span>
             </div>
             
             {/* Social Links */}
@@ -65,6 +65,7 @@ const Footer = () => {
                 { label: 'Skills', href: '#skills' },
                 { label: 'Experience', href: '#experience' },
                 { label: 'Projects', href: '#projects' },
+                { label: 'GitHub', href: '#github-stats' },
                 { label: 'Contact', href: '#contact' }
               ].map((link) => (
                 <button
@@ -97,7 +98,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-300">
                 <span className="text-2xl mr-3">🎓</span>
-                <span className="font-medium">B.Tech IT Student</span>
+                <span className="font-medium">B.Tech IT Student & Developer</span>
               </div>
             </div>
             <div className="flex items-center space-x-3 text-gray-400 pt-4">

@@ -12,8 +12,8 @@ const About = () => {
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A passionate technology enthusiast on a journey to become a skilled developer, 
-            with hands-on experience in web development and a growing interest in modern technologies.
+            A passionate MERN stack developer on a journey to become a skilled full-stack developer, 
+            with hands-on experience in modern web technologies and a growing expertise in scalable applications.
           </p>
         </div>
 
@@ -28,8 +28,8 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">My Mission</h3>
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                To leverage technology in creating innovative, accessible, and scalable solutions 
-                that make a positive impact on people's lives and businesses.
+                To leverage modern web technologies in creating innovative, accessible, and scalable solutions 
+                that make a positive impact on people's lives and businesses through the MERN stack.
               </p>
             </div>
 
@@ -41,8 +41,8 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">What Drives Me</h3>
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
-                Continuous learning, problem-solving, and the opportunity to work on projects 
-                that challenge me to grow both technically and professionally.
+                Continuous learning in full-stack development, problem-solving with modern frameworks, 
+                and the opportunity to work on projects that challenge me to grow both technically and professionally.
               </p>
             </div>
           </div>
@@ -67,6 +67,11 @@ const About = () => {
                   <p className="text-gray-700 dark:text-gray-300 font-medium">A.A.N.M & V.V.R.S.R Polytechnic</p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">2021 - 2024</p>
                 </div>
+                <div className="border-l-4 border-green-500 pl-6 py-2">
+                  <h4 className="font-bold text-gray-900 dark:text-white text-lg">SSC (10th Grade)</h4>
+                  <p className="text-gray-700 dark:text-gray-300 font-medium">Z.P.H.S Pedagantyada</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">2019 - 2020</p>
+                </div>
               </div>
             </div>
 
@@ -88,11 +93,11 @@ const About = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-green-500 rounded-full mr-4"></div>
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">Focus on accessible web applications</span>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">Focus on MERN stack development</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-purple-500 rounded-full mr-4"></div>
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">Portfolio website development</span>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">Full-stack web application development</span>
                 </div>
               </div>
             </div>

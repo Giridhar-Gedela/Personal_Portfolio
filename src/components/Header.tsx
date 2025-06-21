@@ -148,10 +148,10 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden mobile-menu fixed top-20 right-0 h-screen w-80 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-xl border-l border-gray-200 dark:border-gray-700 ${
-          isMenuOpen ? 'open' : ''
+        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="p-6 space-y-4">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-lg shadow-xl mt-2 border border-gray-200 dark:border-gray-700">
             {navItems.map((item) => (
               <button
                 key={item.label}
@@ -169,7 +169,7 @@ const Header = () => {
               href="https://drive.google.com/uc?export=download&id=1Ue8GvcqYC_mRxBTCn3qjHwDDZECWUZA5"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 mt-4"
+              className="flex items-center w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 mt-2"
             >
               <Download className="w-4 h-4 mr-2" />
               Download Resume

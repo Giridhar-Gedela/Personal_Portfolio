@@ -132,7 +132,7 @@ const Skills = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-yellow-500 to-blue-600"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20 fade-in">
+        <div className="text-center mb-20" data-aos="fade-up">
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">Skills & Technologies</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -147,7 +147,9 @@ const Skills = () => {
             return (
               <div
                 key={index}
-                className={`${colorClasses.bg} ${colorClasses.border} border-2 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in`}
+                className={`${colorClasses.bg} ${colorClasses.border} border-2 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover-lift`}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="flex items-center mb-8">
                   <div className={`p-4 bg-white dark:bg-gray-800 rounded-xl mr-6 shadow-md`}>
@@ -168,7 +170,7 @@ const Skills = () => {
                         </div>
                         <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">{skill.level}%</span>
                       </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 skill-bar">
                         <div
                           className={`h-3 rounded-full ${colorClasses.progress} transition-all duration-1000 ease-out shadow-sm`}
                           style={{ width: `${skill.level}%` }}
@@ -183,29 +185,29 @@ const Skills = () => {
         </div>
 
         {/* MERN Stack Highlight */}
-        <div className="mt-16 text-center fade-in">
+        <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="600">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl shadow-2xl max-w-4xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">MERN Stack Developer</h3>
             <p className="text-xl mb-6 opacity-90">
               Specializing in MongoDB, Express.js, React, and Node.js for full-stack web development
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg hover-lift">
                 <div className="text-2xl mb-2">🍃</div>
                 <div className="font-semibold">MongoDB</div>
                 <div className="text-sm opacity-75">Database</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg hover-lift">
                 <div className="text-2xl mb-2">🚀</div>
                 <div className="font-semibold">Express.js</div>
                 <div className="text-sm opacity-75">Backend</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg hover-lift">
                 <div className="text-2xl mb-2">⚛️</div>
                 <div className="font-semibold">React</div>
                 <div className="text-sm opacity-75">Frontend</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg hover-lift">
                 <div className="text-2xl mb-2">💚</div>
                 <div className="font-semibold">Node.js</div>
                 <div className="text-sm opacity-75">Runtime</div>
@@ -215,24 +217,21 @@ const Skills = () => {
         </div>
 
         {/* Additional Skills */}
-        <div className="mt-16 text-center fade-in">
+        <div className="mt-16 text-center" data-aos="fade-up" data-aos-delay="700">
           <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Additional Competencies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'Problem Solving',
               'Team Collaboration',
-              'Agile Methodology',
               'Technical Documentation',
               'Code Review',
               'Testing & Debugging',
-              'Performance Optimization',
               'Cross-browser Compatibility',
               'Version Control',
               'Project Management'
             ].map((skill, index) => (
               <span
                 key={index}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-yellow-500 text-white rounded-full text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default"
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-yellow-500 text-white rounded-full text-sm font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-default hover-lift"
               >
                 {skill}
               </span>

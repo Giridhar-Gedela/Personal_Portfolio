@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Left Section - About */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-up">
             <h3 className="text-2xl font-bold text-yellow-400">Giridhar Gedela</h3>
             <p className="text-gray-300 leading-relaxed text-lg">
               Building scalable solutions with the MERN stack and modern web technologies. 
@@ -32,7 +32,7 @@ const Footer = () => {
                 href="https://github.com/GIRIDHAR-GEDELA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110"
+                className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110 hover-lift"
                 aria-label="GitHub Profile"
               >
                 <Github className="w-5 h-5" />
@@ -41,14 +41,14 @@ const Footer = () => {
                 href="https://linkedin.com/in/giridhargedela"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110"
+                className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110 hover-lift"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="mailto:giridhargedela2908@gmail.com"
-                className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110"
+                className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110 hover-lift"
                 aria-label="Email Contact"
               >
                 <Mail className="w-5 h-5" />
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
 
           {/* Middle Section - Quick Links */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-up" data-aos-delay="200">
             <h3 className="text-xl font-bold text-yellow-400">Quick Links</h3>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -71,7 +71,7 @@ const Footer = () => {
                 <button
                   key={link.label}
                   onClick={() => document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 text-left font-medium py-1"
+                  className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 text-left font-medium py-1 hover:scale-105 transform"
                 >
                   {link.label}
                 </button>
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section - Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-up" data-aos-delay="400">
             <h3 className="text-xl font-bold text-yellow-400">Let's Connect</h3>
             <div className="space-y-4">
               <div className="flex items-center text-gray-300">
@@ -98,7 +98,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-300">
                 <span className="text-2xl mr-3">🎓</span>
-                <span className="font-medium">B.Tech IT Student & Developer</span>
+                <span className="font-medium">B.Tech Student & Developer</span>
               </div>
             </div>
             <div className="flex items-center space-x-3 text-gray-400 pt-4">

@@ -13,7 +13,7 @@ const Projects = () => {
       status: 'Live',
       icon: <Smartphone className="w-6 h-6" />,
       color: 'green',
-      demoUrl: 'https://papaya-dasik-b2a700.netlify.app',
+      demoUrl: 'https://iam-giridhar.netlify.app',
       githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
       role: 'Full Stack Developer',
       contributions: 'Complete design and development, responsive implementation, performance optimization',
@@ -164,7 +164,7 @@ const Projects = () => {
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">Featured Projects</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A showcase of my work spanning MERN stack development, frontend applications, and full-stack solutions. 
+            A showcase of my work spanning full-stack development, frontend applications, and modern web solutions. 
             Each project reflects my commitment to quality, modern technologies, and user-centric design.
           </p>
         </div>
@@ -179,7 +179,7 @@ const Projects = () => {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full font-medium transition-all duration-200 ${
                 selectedFilter === filter
                   ? 'bg-gradient-to-r from-blue-600 to-yellow-500 text-white shadow-lg transform scale-105'
                   : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 hover:scale-105'
@@ -197,7 +197,7 @@ const Projects = () => {
             return (
               <div
                 key={index}
-                className={`${colorClasses.bg} ${colorClasses.border} border-2 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 fade-in`}
+                className={`${colorClasses.bg} ${colorClasses.border} border-2 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-3 fade-in`}
               >
                 {/* Project Header */}
                 <div className="flex items-center justify-between mb-6">

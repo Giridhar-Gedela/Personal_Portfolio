@@ -10,7 +10,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Giridhar Gedela - Portfolio | Web Developer & DevOps Learner" />
     <meta property="og:description" content="Portfolio of Giridhar Gedela - Tech Explorer, Web Developer, and DevOps Learner from Visakhapatnam, India. Building scalable solutions with Java, Web & DevOps." />
-    <meta property="og:image" content="https://i.ibb.co/4Z6fr009/iam-giridhar.png" />
+    <meta property="og:image" content="https://i.ibb.co/j9Ycm16F/iam-giridhar.png" />
     <meta property="og:url" content="https://papaya-dasik-b2a700.netlify.app" />
     <meta property="og:type" content="website" />
     
@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Giridhar Gedela - Portfolio | Web Developer & DevOps Learner" />
     <meta name="twitter:description" content="Portfolio of Giridhar Gedela - Tech Explorer, Web Developer, and DevOps Learner from Visakhapatnam, India. Building scalable solutions with Java, Web & DevOps." />
-    <meta name="twitter:image" content="https://i.ibb.co/4Z6fr009/iam-giridhar.png" />
+    <meta name="twitter:image" content="https://i.ibb.co/j9Ycm16F/iam-giridhar.png" />
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
       }
       
-      /* Page Load Animation */
+      /* Modern 3D Ring Loader */
       .page-loader {
         position: fixed;
         top: 0;
@@ -54,43 +54,73 @@
         pointer-events: none;
       }
       
+      .loader-container {
+        position: relative;
+        width: 120px;
+        height: 120px;
+      }
+      
+      .loader-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        border-radius: 50%;
+        animation: rotate 2s linear infinite;
+      }
+      
+      .loader-ring:nth-child(1) {
+        border-top: 4px solid #f7df1e;
+        animation-delay: 0s;
+      }
+      
+      .loader-ring:nth-child(2) {
+        border-right: 4px solid #61dafb;
+        animation-delay: -0.5s;
+        width: 90%;
+        height: 90%;
+        top: 5%;
+        left: 5%;
+      }
+      
+      .loader-ring:nth-child(3) {
+        border-bottom: 4px solid #ff6b6b;
+        animation-delay: -1s;
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+      }
+      
+      .loader-ring:nth-child(4) {
+        border-left: 4px solid #4ecdc4;
+        animation-delay: -1.5s;
+        width: 70%;
+        height: 70%;
+        top: 15%;
+        left: 15%;
+      }
+      
       .loader-text {
-        font-size: 3rem;
-        font-weight: 700;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
         letter-spacing: 0.1em;
+        animation: pulse 2s ease-in-out infinite;
       }
       
-      .loader-text span {
-        display: inline-block;
-        opacity: 0;
-        animation: letterGlow 0.8s ease-out forwards;
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
       
-      .loader-text span:nth-child(1) { animation-delay: 0.1s; }
-      .loader-text span:nth-child(2) { animation-delay: 0.2s; }
-      .loader-text span:nth-child(3) { animation-delay: 0.3s; }
-      .loader-text span:nth-child(4) { animation-delay: 0.4s; }
-      .loader-text span:nth-child(5) { animation-delay: 0.5s; }
-      .loader-text span:nth-child(6) { animation-delay: 0.6s; }
-      .loader-text span:nth-child(7) { animation-delay: 0.7s; }
-      .loader-text span:nth-child(8) { animation-delay: 0.8s; }
-      
-      @keyframes letterGlow {
-        0% {
-          opacity: 0;
-          transform: translateY(20px) scale(0.8);
-        }
-        50% {
-          opacity: 1;
-          transform: translateY(0) scale(1.1);
-          text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-          text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-        }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.05); }
       }
       
       /* Page Content Animation */
@@ -134,17 +164,14 @@
     </style>
   </head>
   <body>
-    <!-- Page Loader -->
+    <!-- Modern 3D Ring Loader -->
     <div class="page-loader" id="pageLoader">
-      <div class="loader-text">
-        <span>G</span>
-        <span>I</span>
-        <span>R</span>
-        <span>I</span>
-        <span>D</span>
-        <span>H</span>
-        <span>A</span>
-        <span>R</span>
+      <div class="loader-container">
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-ring"></div>
+        <div class="loader-text">Loading...</div>
       </div>
     </div>
     
@@ -165,7 +192,7 @@
           setTimeout(() => {
             loader.style.display = 'none';
           }, 500);
-        }, 2000);
+        }, 1500); // Reduced from 2000ms to 1500ms for faster loading
       });
       
       // Parallax Effect

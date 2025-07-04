@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Star, GitFork, Eye } from 'lucide-react';
+import { Github, Star, GitFork, Eye, Trophy } from 'lucide-react';
 
 const GitHubStats = () => {
   return (
@@ -75,6 +75,28 @@ const GitHubStats = () => {
               src="https://github-readme-stats.vercel.app/api/top-langs/?username=GIRIDHAR-GEDELA&layout=compact&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&text_color=ffffff"
               alt="Giridhar's Top Languages"
               className="w-full rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* GitHub Trophies */}
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 fade-in mb-16">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h3 className="text-3xl font-bold mb-2">GitHub Trophies</h3>
+              <p className="text-gray-300">Achievements and milestones</p>
+            </div>
+            <div className="p-4 bg-yellow-500 rounded-xl">
+              <Trophy className="w-8 h-8" />
+            </div>
+          </div>
+          
+          <div className="bg-gray-800 rounded-xl p-6 overflow-x-auto">
+            <img 
+              src="https://github-profile-trophy.vercel.app/?username=GIRIDHAR-GEDELA&theme=dracula&no-frame=true&margin-w=5&column=7"
+              alt="Giridhar's GitHub Trophies"
+              className="w-full min-w-[800px] rounded-lg"
               loading="lazy"
             />
           </div>

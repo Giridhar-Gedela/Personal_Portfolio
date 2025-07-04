@@ -136,7 +136,7 @@ const Skills = () => {
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">Skills & Technologies</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A comprehensive overview of my technical skills and proficiency levels in the MERN stack and modern web development, 
+            A comprehensive overview of my technical skills and proficiency levels in full-stack development and modern web technologies, 
             continuously growing through hands-on projects and learning.
           </p>
         </div>
@@ -182,10 +182,10 @@ const Skills = () => {
           })}
         </div>
 
-        {/* MERN Stack Highlight */}
+        {/* Full Stack Highlight */}
         <div className="mt-16 text-center fade-in">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl shadow-2xl max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">MERN Stack Developer</h3>
+            <h3 className="text-3xl font-bold mb-4">Full Stack Developer</h3>
             <p className="text-xl mb-6 opacity-90">
               Specializing in MongoDB, Express.js, React, and Node.js for full-stack web development
             </p>
@@ -219,7 +219,6 @@ const Skills = () => {
           <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Additional Competencies</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'Problem Solving',
               'Team Collaboration',
               'Agile Methodology',
               'Technical Documentation',

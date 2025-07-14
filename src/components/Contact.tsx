@@ -18,13 +18,31 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
+    // Create a more comprehensive email body
+    const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
+    const body = encodeURIComponent(`Hello Giridhar,
+
+You have received a new message from your portfolio website:
+
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was sent from your portfolio contact form.
+Please reply directly to: ${formData.email}`);
+    
     const mailtoLink = `mailto:giridhargedela2908@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    
+    // Open email client
+    window.open(mailtoLink, '_blank');
+    
+    // Show success message and reset form
+    alert('Email client opened! Please send the email from your email application.');
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   return (

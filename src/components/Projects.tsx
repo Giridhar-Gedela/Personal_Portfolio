@@ -179,10 +179,10 @@ const Projects = () => {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+              className={`px-4 py-2 rounded-full font-medium transition-all duration-100 ${
                 selectedFilter === filter
                   ? 'bg-gradient-to-r from-blue-600 to-yellow-500 text-white shadow-lg transform scale-105'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 hover:scale-105'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 hover:scale-102'
               }`}
             >
               {filter}

@@ -50,45 +50,36 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-2xl border-b border-gray-200 dark:border-gray-700' 
+        ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <nav className="container mx-auto px-6">
+        <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('#hero')}
-              className={`text-2xl font-bold transition-all duration-300 hover:scale-105 ${
-                isScrolled ? 'text-gray-900 dark:text-white' : 'text-white'
-              }`}
+              className="text-xl font-bold text-yellow-400 hover:text-yellow-300 transition-colors duration-200"
             >
-              <span className="bg-gradient-to-r from-blue-600 to-yellow-500 bg-clip-text text-transparent">
-                Giridhar Gedela
-              </span>
+              Giridhar Gedela
             </button>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <div className="flex items-baseline space-x-6">
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center space-x-6">
               {navItems.map((item) => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 relative ${
+                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 relative ${
                     activeSection === item.href.substring(1)
-                      ? 'text-yellow-500 bg-yellow-500/10'
-                      : isScrolled 
-                        ? 'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-500' 
-                        : 'text-white hover:bg-white/20'
+                      ? 'text-yellow-400'
+                      : 'text-white hover:text-yellow-400'
                   }`}
                 >
                   {item.label}
-                  {activeSection === item.href.substring(1) && (
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-yellow-500 rounded-full"></div>
-                  )}
                 </button>
               ))}
             </div>
@@ -96,11 +87,7 @@ const Header = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className={`p-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:rotate-12 ${
-                isScrolled
-                  ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
-                  : 'text-white hover:bg-white/20'
-              }`}
+              className="p-2 text-white hover:text-yellow-400 transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
@@ -111,11 +98,7 @@ const Header = () => {
               href="https://drive.google.com/uc?export=download&id=1Ue8GvcqYC_mRxBTCn3qjHwDDZECWUZA5"
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
-                isScrolled
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg'
-                  : 'bg-yellow-500 text-blue-900 hover:bg-yellow-400 shadow-lg'
-              }`}
+              className="flex items-center px-4 py-2 bg-yellow-500 text-gray-900 rounded font-medium hover:bg-yellow-400 transition-colors duration-200"
             >
               <Download className="w-4 h-4 mr-2" />
               Resume
@@ -126,18 +109,14 @@ const Header = () => {
           <div className="md:hidden flex items-center space-x-2">
             <button
               onClick={toggleTheme}
-              className={`p-3 rounded-lg transition-all duration-300 ${
-                isScrolled ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800' : 'text-white hover:bg-white/20'
-              }`}
+              className="p-2 text-white hover:text-yellow-400 transition-colors duration-200"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-3 rounded-lg transition-all duration-300 ${
-                isScrolled ? 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800' : 'text-white hover:bg-white/20'
-              }`}
+              className="p-2 text-white hover:text-yellow-400 transition-colors duration-200"
             >
               <div className="relative w-6 h-6">
                 <Menu className={`absolute inset-0 transition-all duration-300 ${isMenuOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'}`} />
@@ -151,15 +130,15 @@ const Header = () => {
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md rounded-lg shadow-xl mt-2 border border-gray-200 dark:border-gray-700">
+          <div className="px-4 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md rounded-lg shadow-xl mt-2">
             {navItems.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left px-4 py-3 rounded-lg text-base font-semibold transition-all duration-300 ${
+                className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   activeSection === item.href.substring(1)
-                    ? 'text-yellow-500 bg-yellow-500/10'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-white hover:bg-blue-600 dark:hover:bg-blue-500'
+                    ? 'text-yellow-400'
+                    : 'text-white hover:text-yellow-400'
                 }`}
               >
                 {item.label}
@@ -169,10 +148,10 @@ const Header = () => {
               href="https://drive.google.com/uc?export=download&id=1Ue8GvcqYC_mRxBTCn3qjHwDDZECWUZA5"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 mt-2"
+              className="flex items-center w-full px-3 py-2 bg-yellow-500 text-gray-900 rounded font-medium hover:bg-yellow-400 transition-colors duration-200 mt-2"
             >
               <Download className="w-4 h-4 mr-2" />
-              Download Resume
+              Resume
             </a>
           </div>
         </div>

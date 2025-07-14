@@ -34,19 +34,19 @@
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
       }
       
-      /* Animated Loader inspired by CodePen */
+      /* New Animated Loader from CodePen */
       .page-loader {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: #1a1a1a;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        transition: opacity 0.5s ease-out;
+        transition: opacity 0.8s ease-out;
       }
       
       .page-loader.hidden {
@@ -54,70 +54,92 @@
         pointer-events: none;
       }
       
-      .loader {
+      /* Morphing Loader Animation */
+      .morphing-loader {
         position: relative;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
       }
       
-      .loader:before,
-      .loader:after {
+      .morphing-loader:before {
         content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        border: 4px solid transparent;
-        border-top: 4px solid #f59e0b;
-        animation: spin 1.5s linear infinite;
-      }
-      
-      .loader:after {
-        border-top: 4px solid #3b82f6;
-        animation-direction: reverse;
-        animation-duration: 1s;
-      }
-      
-      .loader-inner {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        margin: -30px 0 0 -30px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        animation: morphing 2s ease-in-out infinite;
+      }
+      
+      .morphing-loader:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
         width: 40px;
         height: 40px;
+        margin: -20px 0 0 -20px;
+        background: rgba(255, 255, 255, 0.4);
         border-radius: 50%;
-        background: linear-gradient(45deg, #f59e0b, #3b82f6);
-        animation: pulse 2s ease-in-out infinite;
+        animation: morphing 2s ease-in-out infinite 0.5s;
       }
       
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      .morphing-loader .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        background: white;
+        border-radius: 50%;
+        animation: morphing 2s ease-in-out infinite 1s;
       }
       
-      @keyframes pulse {
-        0%, 100% { 
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 1;
+      @keyframes morphing {
+        0%, 100% {
+          border-radius: 50%;
+          transform: scale(1) rotate(0deg);
         }
-        50% { 
-          transform: translate(-50%, -50%) scale(0.8);
-          opacity: 0.7;
+        25% {
+          border-radius: 25%;
+          transform: scale(1.2) rotate(90deg);
+        }
+        50% {
+          border-radius: 0%;
+          transform: scale(0.8) rotate(180deg);
+        }
+        75% {
+          border-radius: 25%;
+          transform: scale(1.1) rotate(270deg);
         }
       }
       
       .loader-text {
         position: absolute;
-        top: 60%;
+        top: 70%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateX(-50%);
         color: white;
-        font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        margin-top: 40px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        animation: textGlow 2s ease-in-out infinite;
+      }
+      
+      @keyframes textGlow {
+        0%, 100% {
+          opacity: 0.8;
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        50% {
+          opacity: 1;
+          text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
       }
       
       /* Page Content Animation */
@@ -163,10 +185,10 @@
   <body>
     <!-- Animated Loader -->
     <div class="page-loader" id="pageLoader">
-      <div class="loader">
-        <div class="loader-inner"></div>
+      <div class="morphing-loader">
+        <div class="inner"></div>
       </div>
-      <div class="loader-text">Loading...</div>
+      <div class="loader-text">Loading</div>
     </div>
     
     <div class="page-content" id="pageContent">

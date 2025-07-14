@@ -65,7 +65,6 @@ const Footer = () => {
                 { label: 'Skills', href: '#skills' },
                 { label: 'Experience', href: '#experience' },
                 { label: 'Projects', href: '#projects' },
-                { label: 'GitHub', href: '#github-stats' },
                 { label: 'Contact', href: '#contact' }
               ].map((link) => (
                 <button

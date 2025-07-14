@@ -29,7 +29,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
               <a
-                href="https://github.com/GIRIDHAR-GEDELA"
+                href="https://github.com/Giridhar-Gedela"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110"

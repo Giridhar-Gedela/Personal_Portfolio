@@ -98,7 +98,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-300">
                 <span className="text-2xl mr-3">🎓</span>
-                <span className="font-medium">B.Tech IT Student & Developer</span>
+                <span className="font-medium">B.Tech IT & Developer</span>
               </div>
             </div>
             <div className="flex items-center space-x-3 text-gray-400 pt-4">

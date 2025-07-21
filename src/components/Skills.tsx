@@ -123,8 +123,7 @@ const Skills = () => {
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">Skills & Technologies</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A comprehensive overview of my technical skills and proficiency levels, 
-            continuously growing through hands-on projects and learning.
+            Technical skills and proficiency levels, continuously growing through hands-on projects.
           </p>
         </div>
 

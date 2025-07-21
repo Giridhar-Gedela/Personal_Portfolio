@@ -8,6 +8,8 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -16,15 +18,38 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:giridhargedela2908@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      // Using Formspree for form handling
+      const response = await fetch('https://formspree.io/f/xdkogkqr', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
+      });
+      
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -40,8 +65,8 @@ const Contact = () => {
           <h2 className="text-5xl font-bold mb-6">Let's Build Something Together!</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-            Ready to collaborate on exciting projects or discuss opportunities? 
-            I'm always open to connecting with fellow developers, potential employers, and tech enthusiasts.
+            Ready to collaborate on projects or discuss opportunities? 
+            Let's connect and build something amazing together.
           </p>
         </div>
 
@@ -122,7 +147,7 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-yellow-500 to-yellow-400 text-blue-900 rounded-2xl p-8 shadow-xl">
               <h3 className="text-xl font-bold mb-3">Ready to Collaborate?</h3>
               <p className="mb-6 leading-relaxed">
-                Whether it's a full-time opportunity, freelance project, or just a tech discussion, 
+                Full-time opportunities, freelance projects, or tech discussions - 
                 I'm excited to hear from you!
               </p>
               <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
@@ -219,11 +244,28 @@ const Contact = () => {
               
               <button
                 type="submit"
-                className="w-full bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg hover:shadow-xl"
+                disabled={isSubmitting}
+                className={`w-full font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg hover:shadow-xl ${
+                  isSubmitting 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-yellow-500 hover:bg-yellow-400'
+                } text-blue-900`}
               >
                 <Send className="w-5 h-5 mr-2" />
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              
+              {submitStatus === 'success' && (
+                <div className="mt-4 p-4 bg-green-100 text-green-800 rounded-lg animate-fade-in">
+                  ✅ Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-lg animate-fade-in">
+                  ❌ Failed to send message. Please try again or email me directly.
+                </div>
+              )}
             </form>
           </div>
         </div>

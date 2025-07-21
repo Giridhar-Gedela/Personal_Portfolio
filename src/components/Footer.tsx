@@ -18,18 +18,18 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-yellow-400">Giridhar Gedela</h3>
             <p className="text-gray-300 leading-relaxed text-lg">
-              Building scalable solutions with the MERN stack and modern web technologies. 
+              Building scalable solutions with Java and Web technologies. 
               Always eager to learn, collaborate, and create meaningful impact through code.
             </p>
             <div className="flex items-center text-gray-400">
               <Code className="w-5 h-5 mr-3" />
-              <span className="font-medium">MERN Stack Developer</span>
+              <span className="font-medium">Web Developer</span>
             </div>
             
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
               <a
-                href="https://github.com/Giridhar-Gedela"
+                href="https://github.com/GIRIDHAR-GEDELA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-gray-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-110"
@@ -97,7 +97,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-300">
                 <span className="text-2xl mr-3">🎓</span>
-                <span className="font-medium">B.Tech IT & Developer</span>
+                <span className="font-medium">B.Tech IT Student</span>
               </div>
             </div>
             <div className="flex items-center space-x-3 text-gray-400 pt-4">

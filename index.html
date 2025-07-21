@@ -10,7 +10,7 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Giridhar Gedela - Portfolio | Web Developer & DevOps Learner" />
     <meta property="og:description" content="Portfolio of Giridhar Gedela - Tech Explorer, Web Developer, and DevOps Learner from Visakhapatnam, India. Building scalable solutions with Java, Web & DevOps." />
-    <meta property="og:image" content="https://i.postimg.cc/T2nVJC9n/iam-giridhar.png" />
+    <meta property="og:image" content="https://i.ibb.co/4Z6fr009/iam-giridhar.png" />
     <meta property="og:url" content="https://papaya-dasik-b2a700.netlify.app" />
     <meta property="og:type" content="website" />
     
@@ -18,7 +18,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Giridhar Gedela - Portfolio | Web Developer & DevOps Learner" />
     <meta name="twitter:description" content="Portfolio of Giridhar Gedela - Tech Explorer, Web Developer, and DevOps Learner from Visakhapatnam, India. Building scalable solutions with Java, Web & DevOps." />
-    <meta name="twitter:image" content="https://i.postimg.cc/T2nVJC9n/iam-giridhar.png" />
+    <meta name="twitter:image" content="https://i.ibb.co/4Z6fr009/iam-giridhar.png" />
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
       }
       
-      /* New Animated Loader from CodePen */
+      /* Page Load Animation */
       .page-loader {
         position: fixed;
         top: 0;
@@ -46,7 +46,7 @@
         align-items: center;
         justify-content: center;
         z-index: 9999;
-        transition: opacity 0.8s ease-out;
+        transition: opacity 0.5s ease-out;
       }
       
       .page-loader.hidden {
@@ -54,91 +54,42 @@
         pointer-events: none;
       }
       
-      /* Morphing Loader Animation */
-      .morphing-loader {
-        position: relative;
-        width: 100px;
-        height: 100px;
-      }
-      
-      .morphing-loader:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 60px;
-        height: 60px;
-        margin: -30px 0 0 -30px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        animation: morphing 2s ease-in-out infinite;
-      }
-      
-      .morphing-loader:after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 40px;
-        height: 40px;
-        margin: -20px 0 0 -20px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-        animation: morphing 2s ease-in-out infinite 0.5s;
-      }
-      
-      .morphing-loader .inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 20px;
-        height: 20px;
-        margin: -10px 0 0 -10px;
-        background: white;
-        border-radius: 50%;
-        animation: morphing 2s ease-in-out infinite 1s;
-      }
-      
-      @keyframes morphing {
-        0%, 100% {
-          border-radius: 50%;
-          transform: scale(1) rotate(0deg);
-        }
-        25% {
-          border-radius: 25%;
-          transform: scale(1.2) rotate(90deg);
-        }
-        50% {
-          border-radius: 0%;
-          transform: scale(0.8) rotate(180deg);
-        }
-        75% {
-          border-radius: 25%;
-          transform: scale(1.1) rotate(270deg);
-        }
-      }
-      
       .loader-text {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        font-size: 1.2rem;
+        font-size: 3rem;
         font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        animation: textGlow 2s ease-in-out infinite;
+        color: white;
+        letter-spacing: 0.1em;
       }
       
-      @keyframes textGlow {
-        0%, 100% {
-          opacity: 0.8;
-          text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      .loader-text span {
+        display: inline-block;
+        opacity: 0;
+        animation: letterGlow 0.8s ease-out forwards;
+      }
+      
+      .loader-text span:nth-child(1) { animation-delay: 0.1s; }
+      .loader-text span:nth-child(2) { animation-delay: 0.2s; }
+      .loader-text span:nth-child(3) { animation-delay: 0.3s; }
+      .loader-text span:nth-child(4) { animation-delay: 0.4s; }
+      .loader-text span:nth-child(5) { animation-delay: 0.5s; }
+      .loader-text span:nth-child(6) { animation-delay: 0.6s; }
+      .loader-text span:nth-child(7) { animation-delay: 0.7s; }
+      .loader-text span:nth-child(8) { animation-delay: 0.8s; }
+      
+      @keyframes letterGlow {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.8);
         }
         50% {
           opacity: 1;
+          transform: translateY(0) scale(1.1);
           text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
         }
       }
       
@@ -183,12 +134,18 @@
     </style>
   </head>
   <body>
-    <!-- Animated Loader -->
+    <!-- Page Loader -->
     <div class="page-loader" id="pageLoader">
-      <div class="morphing-loader">
-        <div class="inner"></div>
+      <div class="loader-text">
+        <span>G</span>
+        <span>I</span>
+        <span>R</span>
+        <span>I</span>
+        <span>D</span>
+        <span>H</span>
+        <span>A</span>
+        <span>R</span>
       </div>
-      <div class="loader-text">Loading</div>
     </div>
     
     <div class="page-content" id="pageContent">
@@ -208,7 +165,7 @@
           setTimeout(() => {
             loader.style.display = 'none';
           }, 500);
-        }, 1500); // Reduced from 2000ms to 1500ms for faster loading
+        }, 2000);
       });
       
       // Parallax Effect

@@ -7,24 +7,24 @@ const Projects = () => {
   const projects = [
     {
       title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website showcasing projects and skills, built with React and TypeScript. Features smooth animations, accessibility compliance, dark/light theme, and optimized performance with live GitHub stats integration.',
+      description: 'A modern, responsive portfolio website showcasing projects and skills, built with React and deployed using modern DevOps practices. Features include smooth animations, accessibility compliance, and optimized performance.',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      category: 'Frontend',
+      category: 'Web Development',
       status: 'Live',
       icon: <Smartphone className="w-6 h-6" />,
       color: 'green',
-      demoUrl: 'https://iam-giridhar.netlify.app',
+      demoUrl: 'https://papaya-dasik-b2a700.netlify.app',
       githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
       role: 'Full Stack Developer',
       contributions: 'Complete design and development, responsive implementation, performance optimization',
-      features: ['Responsive Design', 'Dark/Light Theme', 'Smooth Animations', 'SEO Optimized', 'Accessibility Compliant'],
+      features: ['Responsive Design', 'Smooth Animations', 'SEO Optimized', 'Accessibility Compliant'],
       metrics: '100% Lighthouse Performance Score'
     },
     {
-      title: 'E-Commerce Platform UI',
-      description: 'A fully responsive e-commerce platform UI built with modern web technologies, featuring product catalog, shopping cart interface, user authentication UI, and mobile-first responsive design with accessibility standards.',
+      title: 'Aribin - E-Commerce UI Clone',
+      description: 'A fully responsive e-commerce platform UI clone built with accessibility standards in mind, featuring modern design principles, user-friendly navigation, and optimized user experience for online shopping.',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-      category: 'Frontend',
+      category: 'Web Development',
       status: 'Completed',
       icon: <Globe className="w-6 h-6" />,
       color: 'blue',
@@ -32,14 +32,14 @@ const Projects = () => {
       githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
       role: 'Frontend Developer',
       contributions: 'UI/UX implementation, responsive design, accessibility features',
-      features: ['Product Catalog', 'Shopping Cart UI', 'User Authentication UI', 'Mobile Responsive', 'Search Functionality'],
+      features: ['Product Catalog', 'Shopping Cart UI', 'User Authentication UI', 'Mobile Responsive'],
       metrics: 'Cross-browser compatibility achieved'
     },
     {
-      title: 'Virtual Classroom Platform',
-      description: 'An enhanced virtual classroom platform with improved features for online learning, collaboration, and real-time communication. Built with modern web technologies to support educational institutions with user management.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Web APIs'],
-      category: 'Full Stack',
+      title: 'Virtual Classroom (Zoom Clone - Enhanced)',
+      description: 'An enhanced virtual classroom platform with improved features for online learning, collaboration, and real-time communication. Built with modern web technologies to support educational institutions.',
+      technologies: ['Web Technologies', 'Real-time Communication', 'UI/UX Design'],
+      category: 'Web Application',
       status: 'Completed',
       icon: <Laptop className="w-6 h-6" />,
       color: 'yellow',
@@ -47,64 +47,16 @@ const Projects = () => {
       githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
       role: 'Full Stack Developer',
       contributions: 'Real-time features implementation, UI enhancement, user experience optimization',
-      features: ['Video Conferencing UI', 'Chat System', 'Screen Sharing', 'User Management', 'File Sharing'],
+      features: ['Video Conferencing UI', 'Chat System', 'Screen Sharing', 'User Management'],
       metrics: 'Supports 50+ concurrent users'
-    },
-    {
-      title: 'MERN Stack Blog Application',
-      description: 'A full-stack blog application built with the MERN stack, featuring user authentication, CRUD operations, comment system, and responsive design. Includes admin panel for content management.',
-      technologies: ['MongoDB', 'Express.js', 'React', 'Node.js'],
-      category: 'Full Stack',
-      status: 'In Progress',
-      icon: <Globe className="w-6 h-6" />,
-      color: 'purple',
-      demoUrl: '#',
-      githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
-      role: 'Full Stack Developer',
-      contributions: 'Complete MERN stack implementation, database design, API development',
-      features: ['User Authentication', 'CRUD Operations', 'Comment System', 'Admin Panel', 'Search & Filter'],
-      metrics: 'RESTful API with JWT authentication'
-    },
-    {
-      title: 'Task Management App',
-      description: 'A React-based task management application with drag-and-drop functionality, real-time updates, and collaborative features. Built with modern React hooks and context API for state management.',
-      technologies: ['React', 'JavaScript', 'CSS3', 'Local Storage'],
-      category: 'Frontend',
-      status: 'Completed',
-      icon: <Smartphone className="w-6 h-6" />,
-      color: 'indigo',
-      demoUrl: '#',
-      githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
-      role: 'Frontend Developer',
-      contributions: 'React component architecture, state management, UI/UX design',
-      features: ['Drag & Drop', 'Real-time Updates', 'Task Categories', 'Progress Tracking', 'Data Persistence'],
-      metrics: 'Optimized for mobile and desktop'
-    },
-    {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather dashboard application that fetches real-time weather data from APIs, displays forecasts, and includes location-based services with interactive charts and maps.',
-      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Weather API'],
-      category: 'Frontend',
-      status: 'Completed',
-      icon: <Globe className="w-6 h-6" />,
-      color: 'cyan',
-      demoUrl: '#',
-      githubUrl: 'https://github.com/GIRIDHAR-GEDELA',
-      role: 'Frontend Developer',
-      contributions: 'API integration, responsive design, data visualization',
-      features: ['Real-time Weather', 'Location Services', 'Interactive Charts', '7-day Forecast', 'Multiple Cities'],
-      metrics: 'Real-time data from OpenWeather API'
     }
   ];
 
-  const filters = ['All', 'React', 'JavaScript', 'HTML5', 'CSS3', 'TypeScript', 'MongoDB', 'Express.js', 'Node.js', 'Frontend', 'Full Stack'];
+  const filters = ['All', 'React', 'JavaScript', 'HTML5', 'CSS3', 'TypeScript', 'Web Technologies'];
 
   const filteredProjects = selectedFilter === 'All' 
     ? projects 
-    : projects.filter(project => 
-        project.technologies.includes(selectedFilter) || 
-        project.category === selectedFilter
-      );
+    : projects.filter(project => project.technologies.includes(selectedFilter));
 
   const getColorClasses = (color: string) => {
     const colors = {
@@ -128,27 +80,6 @@ const Projects = () => {
         icon: 'bg-green-100 dark:bg-green-800 text-green-600 dark:text-green-400',
         status: 'bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200',
         button: 'bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600'
-      },
-      purple: {
-        bg: 'bg-purple-50 dark:bg-purple-900/20',
-        border: 'border-purple-200 dark:border-purple-700',
-        icon: 'bg-purple-100 dark:bg-purple-800 text-purple-600 dark:text-purple-400',
-        status: 'bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200',
-        button: 'bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600'
-      },
-      indigo: {
-        bg: 'bg-indigo-50 dark:bg-indigo-900/20',
-        border: 'border-indigo-200 dark:border-indigo-700',
-        icon: 'bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-400',
-        status: 'bg-indigo-100 dark:bg-indigo-800 text-indigo-800 dark:text-indigo-200',
-        button: 'bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600'
-      },
-      cyan: {
-        bg: 'bg-cyan-50 dark:bg-cyan-900/20',
-        border: 'border-cyan-200 dark:border-cyan-700',
-        icon: 'bg-cyan-100 dark:bg-cyan-800 text-cyan-600 dark:text-cyan-400',
-        status: 'bg-cyan-100 dark:bg-cyan-800 text-cyan-800 dark:text-cyan-200',
-        button: 'bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600'
       }
     };
     return colors[color as keyof typeof colors];
@@ -164,8 +95,8 @@ const Projects = () => {
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">Featured Projects</h2>
           <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 to-yellow-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            A showcase of my work spanning full-stack development, frontend applications, and modern web solutions. 
-            Each project reflects my commitment to quality, modern technologies, and user-centric design.
+            A showcase of my work spanning web development, UI/UX design, and accessible applications. 
+            Each project reflects my commitment to quality and user-centric solutions.
           </p>
         </div>
 
@@ -179,10 +110,10 @@ const Projects = () => {
             <button
               key={filter}
               onClick={() => setSelectedFilter(filter)}
-              className={`px-4 py-2 rounded-full font-medium transition-all duration-100 ${
+              className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                 selectedFilter === filter
-                  ? 'bg-gradient-to-r from-blue-600 to-yellow-500 text-white shadow-lg transform scale-105'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 hover:scale-102'
+                  ? 'bg-gradient-to-r from-blue-600 to-yellow-500 text-white shadow-lg'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:border-blue-400 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400'
               }`}
             >
               {filter}
@@ -197,7 +128,7 @@ const Projects = () => {
             return (
               <div
                 key={index}
-                className={`${colorClasses.bg} ${colorClasses.border} border-2 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-3 fade-in`}
+                className={`${colorClasses.bg} ${colorClasses.border} border-2 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 fade-in`}
               >
                 {/* Project Header */}
                 <div className="flex items-center justify-between mb-6">
@@ -262,7 +193,7 @@ const Projects = () => {
                     className={`flex-1 ${colorClasses.button} text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center hover:shadow-lg transform hover:scale-105`}
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    {project.status === 'Live' ? 'Live Demo' : 'View Project'}
+                    Live Demo
                   </a>
                   <a
                     href={project.githubUrl}
@@ -279,31 +210,66 @@ const Projects = () => {
           })}
         </div>
 
-        {/* Project Stats */}
+        {/* GitHub Stats Section */}
         <div className="mt-20 fade-in">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-10 shadow-2xl">
+          <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-2xl p-10 shadow-2xl">
             <div className="text-center mb-10">
-              <h3 className="text-3xl font-bold mb-4">Project Statistics</h3>
-              <p className="text-gray-200 text-lg">My development journey in numbers</p>
+              <h3 className="text-3xl font-bold mb-4">GitHub Activity</h3>
+              <p className="text-gray-300 text-lg">My coding journey in numbers</p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="text-3xl font-bold mb-2">{projects.length}+</div>
-                <div className="text-gray-200">Projects Completed</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="text-3xl font-bold mb-2">10+</div>
-                <div className="text-gray-200">Technologies Used</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="text-3xl font-bold mb-2">100%</div>
-                <div className="text-gray-200">Responsive Design</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6">
-                <div className="text-3xl font-bold mb-2">24/7</div>
-                <div className="text-gray-200">Learning & Building</div>
-              </div>
+            {/* Live GitHub Stats */}
+            <div className="flex flex-col items-center space-y-8">
+              <img 
+                src="https://github-readme-stats.vercel.app/api?username=GIRIDHAR-GEDELA&show_icons=true&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&icon_color=f7df1e&text_color=ffffff"
+                alt="Giridhar's GitHub Stats"
+                className="rounded-lg shadow-lg max-w-full h-auto"
+                loading="lazy"
+              />
+              
+              <img 
+                src="https://github-readme-streak-stats.herokuapp.com/?user=GIRIDHAR-GEDELA&theme=radical&hide_border=true&background=1a1b27&stroke=f7df1e&ring=f7df1e&fire=f7df1e&currStreakLabel=ffffff"
+                alt="Giridhar's GitHub Streak"
+                className="rounded-lg shadow-lg max-w-full h-auto"
+                loading="lazy"
+              />
+              
+              <img 
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=GIRIDHAR-GEDELA&layout=compact&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&text_color=ffffff"
+                alt="Giridhar's Top Languages"
+                className="rounded-lg shadow-lg max-w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="mt-10 text-center">
+              <p className="text-gray-300 mb-6 text-lg">Continuously learning and building amazing projects!</p>
+              <a
+                href="https://github.com/GIRIDHAR-GEDELA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-white text-gray-900 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                <Github className="w-5 h-5 mr-2" />
+                View GitHub Profile
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Certifications & Achievements */}
+        <div className="mt-20 fade-in">
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Certifications & Achievements</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-2xl border-2 border-blue-200 dark:border-blue-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Industrial Training Certificate</h4>
+              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">BSNL - IT & Networking</p>
+              <p className="text-gray-700 dark:text-gray-300">Comprehensive training in telecommunications and network infrastructure</p>
+            </div>
+            <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 p-8 rounded-2xl border-2 border-yellow-200 dark:border-yellow-700 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Academic Excellence</h4>
+              <p className="text-gray-800 dark:text-gray-200 mb-3 font-semibold">Consistent Performance</p>
+              <p className="text-gray-700 dark:text-gray-300">Maintaining strong academic performance throughout B.Tech program</p>
             </div>
           </div>
         </div>

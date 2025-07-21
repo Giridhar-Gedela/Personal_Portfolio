@@ -118,7 +118,7 @@ const Hero = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full shadow-2xl flex items-center justify-center transform hover:scale-105 transition-all duration-500 hover:rotate-3">
                 <div className="w-72 h-72 lg:w-88 lg:h-88 bg-blue-800 rounded-full flex items-center justify-center overflow-hidden border-4 border-white/20">
                   <img 
-                    src="https://i.ibb.co/4Z6fr009/iam-giridhar.png" 
+                    src="https://avatars.githubusercontent.com/u/148883538?v=4" 
                     alt="Giridhar Gedela - Web Developer"
                     className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
                     loading="lazy"

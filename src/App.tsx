@@ -52,9 +52,6 @@ function App() {
         <div id="projects">
           <Projects />
         </div>
-        <div id="github-stats">
-          <GitHubStats />
-        </div>
         <div id="contact">
           <Contact />
         </div>

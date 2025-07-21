@@ -47,10 +47,6 @@ const About = () => {
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
           {/* Right Content - Education & Experience Cards */}
           <div className="space-y-8 fade-in">
             <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
@@ -79,7 +75,5 @@ const About = () => {
               </div>
             </div>
 
-  )
-}
   )
 }

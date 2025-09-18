@@ -210,53 +210,6 @@ const Projects = () => {
           })}
         </div>
 
-        {/* GitHub Stats Section */}
-        <div className="mt-20 fade-in">
-          <div className="bg-gray-900 dark:bg-gray-800 text-white rounded-2xl p-10 shadow-2xl">
-            <div className="text-center mb-10">
-              <h3 className="text-3xl font-bold mb-4">GitHub Activity</h3>
-              <p className="text-gray-300 text-lg">My coding journey in numbers</p>
-            </div>
-
-            {/* Live GitHub Stats */}
-            <div className="flex flex-col items-center space-y-8">
-              <img 
-                src="https://github-readme-stats.vercel.app/api?username=GIRIDHAR-GEDELA&show_icons=true&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&icon_color=f7df1e&text_color=ffffff"
-                alt="Giridhar's GitHub Stats"
-                className="rounded-lg shadow-lg max-w-full h-auto"
-                loading="lazy"
-              />
-              
-              <img 
-                src="https://github-readme-streak-stats.herokuapp.com/?user=GIRIDHAR-GEDELA&theme=radical&hide_border=true&background=1a1b27&stroke=f7df1e&ring=f7df1e&fire=f7df1e&currStreakLabel=ffffff"
-                alt="Giridhar's GitHub Streak"
-                className="rounded-lg shadow-lg max-w-full h-auto"
-                loading="lazy"
-              />
-              
-              <img 
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=GIRIDHAR-GEDELA&layout=compact&theme=radical&hide_border=true&bg_color=1a1b27&title_color=f7df1e&text_color=ffffff"
-                alt="Giridhar's Top Languages"
-                className="rounded-lg shadow-lg max-w-full h-auto"
-                loading="lazy"
-              />
-            </div>
-
-            <div className="mt-10 text-center">
-              <p className="text-gray-300 mb-6 text-lg">Continuously learning and building amazing projects!</p>
-              <a
-                href="https://github.com/GIRIDHAR-GEDELA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-white text-gray-900 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                <Github className="w-5 h-5 mr-2" />
-                View GitHub Profile
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Certifications & Achievements */}
         <div className="mt-20 fade-in">
           <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center">Certifications & Achievements</h3>
